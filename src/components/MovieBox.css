@@ -1,0 +1,9 @@
+.movieDetails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+.buttonHome {
+    padding: 4px 8px;
+}
+
