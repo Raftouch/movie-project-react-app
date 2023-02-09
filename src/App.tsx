@@ -9,19 +9,18 @@ import { useMoviesQuery } from './hooks/useMovieQuery';
 
 
 function App() {
-  const { movies } = useMoviesQuery();
-  console.log(movies)
+  const { movies, loading } = useMoviesQuery();
 
+  console.log("movies", movies);
+ 
 
-  if (movies == null) return null;
+  if (loading || movies == null) return <h1 className='loading'>Loading...</h1>;
 
   return (
     <div className='movieDetails'>
 
       {movies.map(movie => <MovieBox movie={movie} key={movie.id} />)}
 
-      {/* <MovieBox movie = {movies[0]} />
-      <MovieBox movie = {movies[1]} /> */}
 
     </div>
   )

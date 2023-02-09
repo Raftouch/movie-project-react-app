@@ -18,6 +18,7 @@ export function MovieBox({movie}: MovieProps) {
             <img src={img} className="movie-img" alt={movie.original_title}/>
             <p className="movie-name">{movie.original_title}</p>
             <p>{movie.overview}</p>
+            
         </div>
     )
 }

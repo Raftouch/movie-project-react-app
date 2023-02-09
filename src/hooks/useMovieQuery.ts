@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getMovies } from "../api/movie";
 import { IMovie } from "../models";
 
 export const useMoviesQuery = () => {
-    const [movies, setMovies] = useState<IMovie[] | undefined>();
+  const [loading, setLoading] = useState(true); 
+  const [movies, setMovies] = useState<IMovie[] | undefined>();   
+
     const testCallAPi = async () => {
         const test = await getMovies();
-        setMovies(test.results)
+        setMovies(test.results);
+        return test.results;
       }
 
-    testCallAPi();
+      useEffect(() => {
+        testCallAPi();
+        setLoading(false);
+      }, []);
 
-    return { movies };
+
+    return { movies, loading };
 }
