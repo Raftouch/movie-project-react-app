@@ -1,9 +1,14 @@
 .movieDetails {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
+    margin: 50px;
+    text-align: center;
+    font-weight: bold;
 }
-.buttonHome {
-    padding: 4px 8px;
+.movie-img {
+    border-radius: 10px;
 }
+
+
 
